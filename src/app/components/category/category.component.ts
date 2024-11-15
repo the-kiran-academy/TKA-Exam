@@ -7,7 +7,7 @@ import { CategoryService } from 'src/app/services/category.service';
   styleUrls: ['./category.component.css'],
 })
 export class CategoryComponent implements OnInit {
-  data: any[] = []; // This will store the categories
+  myData:any; // This will store the categories
 
   constructor(private categoryService: CategoryService) {}
 
@@ -17,12 +17,15 @@ export class CategoryComponent implements OnInit {
 
   getAllCAtegories() {
     this.categoryService.getCategories().subscribe(
-      (response) => {
-        this.data = response;
+      (response: any) => {
+        this.myData = response.data || []; // Replace 'categories' with the actual property name
+        console.log('Data:', this.myData);
       },
       (error) => {
         console.error('Error fetching categories:', error);
       }
     );
   }
+
+
 }

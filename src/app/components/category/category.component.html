@@ -12,13 +12,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let category of data">
+      <tr *ngFor="let category of myData">
         <td>{{ category.categoryId }}</td>
         <td>{{ category.categoryName }}</td>
         <td>{{ category.createdBy }}</td>
-        <td>{{ category.createdAt | date: 'medium' }}</td>
+        <td>{{ category.createdAt }}</td>
         <td>{{ category.modifiedBy }}</td>
-        <td>{{ category.modifiedAt | date: 'medium' }}</td>
+        <td>{{ category.modifiedAt }}</td>
       </tr>
     </tbody>
   </table>
