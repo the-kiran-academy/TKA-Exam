@@ -1,0 +1,25 @@
+<div class="container my-4">
+  <h3 class="text-center mb-3">Category List</h3>
+  <table class="table table-hover table-striped table-bordered custom-table">
+    <thead class="table-dark">
+      <tr>
+        <th>Category ID</th>
+        <th>Category Name</th>
+        <th>Created By</th>
+        <th>Created At</th>
+        <th>Modified By</th>
+        <th>Modified At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of data">
+        <td>{{ category.categoryId }}</td>
+        <td>{{ category.categoryName }}</td>
+        <td>{{ category.createdBy }}</td>
+        <td>{{ category.createdAt | date: 'medium' }}</td>
+        <td>{{ category.modifiedBy }}</td>
+        <td>{{ category.modifiedAt | date: 'medium' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
